@@ -1,4 +1,4 @@
-import { Controller, Get,Res } from '@nestjs/common';
+import { Controller, Get,Res,Post } from '@nestjs/common';
 import { AppService } from './app.service';
 import { Response } from 'express';
 
@@ -11,18 +11,18 @@ export class AppController {
     return this.appService.getHello();
   }
 
-  @Get('/pdf')
-  async getPDF(
-    @Res() res: Response,
-  ): Promise<void> {
-    const buffer = await this.appService.generatePDF()
+  // @Post('/pdf')
+  // async getPDF(
+  //   @Res() res: Response,
+  // ): Promise<void> {
+  //   // const buffer = await this.appService.generatePDF()
 
-    res.set({
-      'Content-Type': 'application/pdf',
-      'Content-Disposition': 'inline; filename=example.pdf',
-      'Content-Length': buffer.length,
-    })
+  //   res.set({
+  //     'Content-Type': 'application/pdf',
+  //     'Content-Disposition': 'inline; filename=example.pdf',
+  //     // 'Content-Length': ,
+  //   })
 
-    res.end(buffer)
-  }
+  //   res.end()
+  // }
 }

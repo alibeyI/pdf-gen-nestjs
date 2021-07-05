@@ -1,0 +1,31 @@
+{
+  "data": {
+    "person": {
+      "birthDate": "17.04.1993",
+      "fullname": "SƏMƏDOV FƏRİD SÜLEYMAN OĞLU",
+      "gender": "Kişi",
+      "pin": "5J9M39C",
+      "serial": "AZE 18377455"
+    },
+    "relations": [
+      {
+        "birthDate": "09.02.1965",
+        "birthPlace": "AZƏRBAYCAN RESPUBLİKASI, BAKI ŞƏHƏRİ",
+        
+        "bloodtype": "A(II)RH+",
+        "citizen": "AZE",
+        "eyecolor": "ŞABALIDI",
+        "fullActNumber": 0,
+        "gender": "Kişi",
+        "height": 176,
+        "issueDate": "14.12.2016 05:12:33",
+        "martialStatus": "Evli",
+        "name": "SÜLEYMAN",
+        "patronymic": "SƏMƏD",
+        "pin": "1YXC1QX",
+        "relType": "Ata",
+        "surname": "SƏMƏDOV"
+      }
+    ]
+  }
+}

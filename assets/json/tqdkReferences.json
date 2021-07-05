@@ -1,0 +1,67 @@
+{
+  "data": {
+    "person": {
+      "birthDate": "17.04.1993",
+      "pin": "5J9M39C",
+      "gender": "Kişi",
+      "fullname": "SƏMƏDOV FƏRİD SÜLEYMAN OĞLU",
+      "serial": "AZE 18377455"
+    },
+    "references": [
+      {
+        "fullname": "FƏRİD SƏMƏDOV SÜLEYMAN",
+        "pin": "5J9M39C",
+        "gender": "1",
+        "birthDate": "17.04.1993",
+        "caristasusAd": "Məzundur",
+        "qebul": {
+          "qebulIli": "2010/2011",
+          "qebulformaAd": "DİM-nin (TQDK-nın) əmri",
+          "identKod": "2010100104268",
+          "tehsilSeviyye": "Bakalavriat",
+          "tmAdiQebul": "Azərbaycan Memarlıq və İnşaat Universiteti",
+          "ixtisasQebul": "50632-İnformasiya texnologiyaları və sistemləri mühəndisliyi, əyani",
+          "odenishQebulAd": "Dövlət sifarişi əsasında"
+        },
+        "bitirdi": {
+          "tmAdiBit": "Azərbaycan Memarlıq və İnşaat Universiteti",
+          "ixtisasBit": "50632-İnformasiya texnologiyaları və sistemləri mühəndisliyi, əyani",
+          "odenishBitAd": "Dövlət sifarişi əsasında",
+          "ilBitir": "2014",
+          "tehsilSeviyye": "Bakalavriat",
+          "diplomSeriya": "A 026458",
+          "qeydiyyatNomDiplom": "47",
+          "diplomEmrVerTarix": "6/20/2014 1:00:00 AM",
+          "diplomNov": "Fərqlənmə"
+        }
+      },
+      {
+        "fullname": "FƏRİD SƏMƏDOV SÜLEYMAN",
+        "pin": "5J9M39C",
+        "gender": "1",
+        "birthDate": "17.04.1993",
+        "caristasusAd": "Məzundur",
+        "qebul": {
+          "qebulIli": "2014/2015",
+          "qebulformaAd": "DİM-nin (TQDK-nın) əmri",
+          "identKod": "2014110105970",
+          "tehsilSeviyye": "Magistratura",
+          "tmAdiQebul": "Azərbaycan Texniki Universiteti",
+          "ixtisasQebul": "60632-İnformasiya mühafizəsi və təhlükəsizliyi, əyani",
+          "odenishQebulAd": "Dövlət sifarişi əsasında"
+        },
+        "bitirdi": {
+          "tmAdiBit": "Azərbaycan Texniki Universiteti",
+          "ixtisasBit": "60632-İnformasiya mühafizəsi və təhlükəsizliyi, əyani",
+          "odenishBitAd": "Dövlət sifarişi əsasında",
+          "ilBitir": "2016",
+          "tehsilSeviyye": "Magistratura",
+          "diplomSeriya": "AM 008781",
+          "qeydiyyatNomDiplom": "0005",
+          "diplomEmrVerTarix": "7/14/2016 1:00:00 AM",
+          "diplomNov": "Fərqlənmə"
+        }
+      }
+    ]
+  }
+}

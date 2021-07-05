@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>A4</title>
+    <link rel="stylesheet" type="text/css" href="{{{fontVisby}}}" />
+    <style>
+      /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
+      html {
+        line-height: 1.15;
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+      }
+      body {
+        margin: 0;
+      }
+      article,
+      aside,
+      footer,
+      header,
+      nav,
+      section {
+        display: block;
+      }
+      h1 {
+        font-size: 2em;
+        margin: 0.67em 0;
+      }
+      figcaption,
+      figure,
+      main {
+        display: block;
+      }
+      figure {
+        margin: 1em 40px;
+      }
+      hr {
+        box-sizing: content-box;
+        height: 0;
+        overflow: visible;
+      }
+      pre {
+        font-family: monospace, monospace;
+        font-size: 1em;
+      }
+      a {
+        background-color: transparent;
+        -webkit-text-decoration-skip: objects;
+      }
+      abbr[title] {
+        border-bottom: none;
+        text-decoration: underline;
+        text-decoration: underline dotted;
+      }
+      b,
+      strong {
+        font-weight: inherit;
+      }
+      b,
+      strong {
+        font-weight: bolder;
+      }
+      code,
+      kbd,
+      samp {
+        font-family: monospace, monospace;
+        font-size: 1em;
+      }
+      dfn {
+        font-style: italic;
+      }
+      mark {
+        background-color: #ff0;
+        color: #000;
+      }
+      small {
+        font-size: 80%;
+      }
+      sub,
+      sup {
+        font-size: 75%;
+        line-height: 0;
+        position: relative;
+        vertical-align: baseline;
+      }
+      sub {
+        bottom: -0.25em;
+      }
+      sup {
+        top: -0.5em;
+      }
+      audio,
+      video {
+        display: inline-block;
+      }
+      audio:not([controls]) {
+        display: none;
+        height: 0;
+      }
+      img {
+        border-style: none;
+      }
+      svg:not(:root) {
+        overflow: hidden;
+      }
+      button,
+      input,
+      optgroup,
+      select,
+      textarea {
+        font-family: sans-serif;
+        font-size: 100%;
+        line-height: 1.15;
+        margin: 0;
+      }
+      button,
+      input {
+        overflow: visible;
+      }
+      button,
+      select {
+        text-transform: none;
+      }
+      [type='reset'],
+      [type='submit'],
+      button,
+      html [type='button'] {
+        -webkit-appearance: button;
+      }
+      [type='button']::-moz-focus-inner,
+      [type='reset']::-moz-focus-inner,
+      [type='submit']::-moz-focus-inner,
+      button::-moz-focus-inner {
+        border-style: none;
+        padding: 0;
+      }
+      [type='button']:-moz-focusring,
+      [type='reset']:-moz-focusring,
+      [type='submit']:-moz-focusring,
+      button:-moz-focusring {
+        outline: 1px dotted ButtonText;
+      }
+      fieldset {
+        padding: 0.35em 0.75em 0.625em;
+      }
+      legend {
+        box-sizing: border-box;
+        color: inherit;
+        display: table;
+        max-width: 100%;
+        padding: 0;
+        white-space: normal;
+      }
+      progress {
+        display: inline-block;
+        vertical-align: baseline;
+      }
+      textarea {
+        overflow: auto;
+      }
+      [type='checkbox'],
+      [type='radio'] {
+        box-sizing: border-box;
+        padding: 0;
+      }
+      [type='number']::-webkit-inner-spin-button,
+      [type='number']::-webkit-outer-spin-button {
+        height: auto;
+      }
+      [type='search'] {
+        -webkit-appearance: textfield;
+        outline-offset: -2px;
+      }
+      [type='search']::-webkit-search-cancel-button,
+      [type='search']::-webkit-search-decoration {
+        -webkit-appearance: none;
+      }
+      ::-webkit-file-upload-button {
+        -webkit-appearance: button;
+        font: inherit;
+      }
+      details,
+      menu {
+        display: block;
+      }
+      summary {
+        display: list-item;
+      }
+      canvas {
+        display: inline-block;
+      }
+      template {
+        display: none;
+      }
+      [hidden] {
+        display: none;
+      } /*# sourceMappingURL=normalize.min.css.map */
+    </style>
+    <style>
+      @page {
+        margin: 0;
+      }
+      body {
+        margin: 0;
+      }
+      .sheet {
+        margin: 0;
+        overflow: hidden;
+        position: relative;
+        box-sizing: border-box;
+        page-break-after: always;
+      } /** Paper sizes **/
+      body.A4 .sheet {
+        width: 260mm;
+        min-height: 296mm;
+        height: auto;
+      }
+      body.A4.landscape .sheet {
+        width: 297mm;
+        height: 209mm;
+      } /** Padding area **/
+      .sheet.padding-10mm {
+        padding: 10mm;
+      }
+      .sheet.padding-15mm {
+        padding: 15mm;
+      }
+      .sheet.padding-20mm {
+        padding: 20mm;
+      }
+      .sheet.padding-25mm {
+        padding: 25mm;
+      } /** For screen preview **/
+      @media screen {
+        body {
+          background: #e0e0e0;
+        }
+        .sheet {
+          background: white;
+          box-shadow: 0 0.5mm 2mm rgba(0, 0, 0, 0.3);
+          margin: 5mm auto;
+        }
+      } /** Fix for Chrome issue #273306 **/
+      @media print {
+        body.A4.landscape {
+          width: 297mm;
+        }
+        body.A4,
+        body.A5.landscape {
+          width: 210mm;
+        }
+      }
+    </style>
+    <style>
+      @page {
+        size: A4;
+      }
+    </style>
+    <style>
+      * {
+        font-size: 14px;
+        font-family: 'vispy';
+      }
+      .clear {
+        clear: both;
+      }
+      .bold-text {
+        font-weight: bold;
+      }
+      .header {
+        margin-bottom: 150px;
+      }
+      .header-section-one {
+        padding-bottom: 20px;
+        width: 100%;
+        position: relative;
+        border-bottom: 1px solid #cac5c5;
+      }
+      .header-section-one-left-side {
+        text-align: left;
+        width: 33.3%;
+        float: left;
+      }
+      .header-section-one-middle {
+        vertical-align: middle;
+        text-align: center;
+        width: 33.3%;
+        float: left;
+        margin-top: 3px;
+      }
+      .header-section-one-middle p {
+        color: #2d2d2d;
+      }
+      .header-section-one-right-side {
+        text-align: right;
+        width: 33.3%;
+        float: right;
+      }
+      .header-section-two {
+        width: 100%;
+        padding: 15px 0;
+        margin-top: 15px;
+      }
+      .header-section-two-left-side {
+        text-align: left;
+        width: 100%;
+      }
+      .header-section-two-middle {
+        vertical-align: middle;
+        text-align: center;
+        width: 33.3%;
+        float: left;
+      }
+      .footer {
+        bottom: 30px;
+        position: absolute;
+        margin-top: 12px;
+      }
+      .barcode128 {
+        float: left;
+      }
+      .qrcode {
+        float: left;
+        margin-left: -10px;
+        margin-top: -5px;
+      }
+      .content {
+        margin-top: 55px;
+      }
+      .container {
+        margin-bottom: 127px;
+      }
+      .content-header {
+        text-align: center;
+        font-weight: bold;
+        margin-top: 30px;
+      }
+      .content-header p {
+        font-size: 15px;
+      }
+      .user-info tr {
+        text-align: left;
+        padding: 5px;
+      }
+      .table-container tr {
+        text-align: left;
+        padding: 5px;
+      }
+      .common-table {
+        width: 100%;
+        text-align: left;
+      }
+      .common-table td {
+        padding: 5px;
+      }
+      .common-table tbody tr:first-child {
+        background: #d5dfe9;
+        margin-bottom: 20px;
+      }
+      .common-table:last-child {
+        /*border-bottom: 1px solid #cac5c5;*/
+        padding-bottom: 11px;
+      }
+      .user-table {
+        width: 100%;
+        text-align: left;
+      }
+      .user-table td {
+        padding: 5px;
+      }
+      .align-left {
+        text-align: left;
+      }
+      .align-right {
+        text-align: right;
+      }
+      .align-center {
+        text-align: center;
+      }
+      .heading {
+        font-size: 16px;
+        font-weight: bold; /*display: inline-block;*/
+        margin-bottom: 20px;
+      }
+      .heading span {
+        border-bottom: 1px solid #cac5c5;
+        padding: 0 3px 3px 0;
+        margin-left: 7px;
+        margin-bottom: 10px;
+      }
+      .common-table tr td:nth-child(2) {
+        width: 40%;
+      }
+      .user-table tr td:nth-child(2) {
+        width: 40%;
+      }
+      .common-table tr td:nth-child(2) {
+        width: 75%;
+      }
+      .common-table td {
+        padding: 5px;
+        border-bottom: 1px solid #d5dfe9;
+      }
+    </style></head
+  ><!-- Set "A5", "A4" or "A3" for class name --><!-- Set also "landscape" if you need -->
+  <body class="A4">
+    <!-- Each sheet element should have the class "sheet" --><!-- "padding-**mm" is optional: you can set 10, 15, 20 or 25 -->
+    <section class="sheet padding-10mm">
+      <div class="header">
+        <div class="header-section-one">
+          <div class="header-section-one-left-side">
+            <img style="width: 125px" src="{{{logo}}}" />
+          </div>
+          <div class="header-section-one-middle"><p>my.gov.az</p></div>
+          <div class="header-section-one-right-side">
+            <img style="width: 46px" src="{{{logoCallCenter}}}" />
+          </div>
+          <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+        <div class="header-section-two">
+          <div class="header-section-two-left-side">
+            <p class="bold-text">
+              Sənədin nömrəsi:
+              <span style="font-weight: 500">{{{documentNumber}}}</span>
+            </p>
+          </div>
+          <div class="header-section-two-left-side">
+            <p class="bold-text">
+              Verilmə tarixi:
+              <span style="font-weight: 500">{{{docGivenDate}}}</span>
+            </p>
+          </div>
+          <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+        <div class="container">
+          <!-- <div class="content-header">                <p>Diplom haqqında arayış</p>            </div> -->
+          <div class="content">
+            <div style="text-align: left; margin-top: 30px">
+              <p class="heading">
+                <span style="font-size: 16px"
+                  >Şəxsə aid təhsil məlumatları</span
+                >
+              </p>
+            </div>
+            <div list="certificates" class="table-container">
+              <table class="common-table">
+                <tbody>
+                  <tr>
+                    <td colspan="2" style="font-weight: bold">
+                      <span style="font-weight: bold"></span>{{{qebulMuessise}}}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="font-weight: bold">Soyad, ad, ata adı</td>
+                    <td class="">{{{lastName}}} {{{name}}} {{{patronymic}}}</td>
+                  </tr>
+                  <tr>
+                    <td style="font-weight: bold">Qəbul olduğu ixtisas</td>
+                    <td>{{{qebulIxtisas}}}</td>
+                  </tr>
+                  <tr>
+                    <td style="font-weight: bold">Bitirdiyi müəssisə</td>
+                    <td>{{{bitiribAli}}}</td>
+                  </tr>
+                  <tr>
+                    <td style="font-weight: bold">Bitirdiyi ixtisas</td>
+                    <td>{{{bitirdiyiIxtisas}}}</td>
+                  </tr>
+                  <tr>
+                    <td style="font-weight: bold">Fakültə</td>
+                    <td>{{{fakulte}}}</td>
+                  </tr>
+                  <tr>
+                    <td style="font-weight: bold">Təhsil pilləsi</td>
+                    <td>{{{tPille}}}</td>
+                  </tr>
+                  <tr>
+                    <td style="font-weight: bold">Təhsil forması</td>
+                    <td>{{{tForma}}}</td>
+                  </tr>
+                  <tr>
+                    <td style="font-weight: bold">Təlim dili</td>
+                    <td>{{{tdili}}}</td>
+                  </tr>
+                  <tr>
+                    <td style="font-weight: bold">TQDK sərəncam nömrəsi</td>
+                    <td>{{{serencamNom}}}</td>
+                  </tr>
+                  <tr>
+                    <td style="font-weight: bold">Daxil olduğu il</td>
+                    <td>{{{daxilIL}}}</td>
+                  </tr>
+                  <tr>
+                    <td style="font-weight: bold">Bitirdiyi il</td>
+                    <td>{{{bitirib}}}</td>
+                  </tr>
+                  <tr>
+                    <td style="font-weight: bold">
+                      Diplom seriyası və nömrəsi
+                    </td>
+                    <td>{{{dSeriya}}} {{{dNomre}}}</td>
+                  </tr>
+                  <tr>
+                    <td style="font-weight: bold">Diplomun növü</td>
+                    <td>{{{dNovu}}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="footer">
+          <div class="barcodes">
+            <div class="barcode128">
+              <img
+                style="width: 120px; width: 300px"
+                src="data:image/png;base64,{{{barcode}}}"
+              />
+              <br />
+              <br />
+              <span>{{{documentNumber}}}</span>
+            </div>
+            <div class="qrcode">
+              <img style="width: 80px" src="data:image/png;base64,{{{qr}}}" />
+            </div>
+            <div class="clear"></div>
+          </div>
+          <div class="info-text">
+            <p style="font-size: 14px">
+              * Ştrix kodlar arayışın sistem nömrəsini əks etdirir.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

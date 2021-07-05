@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <!-- css for printing -->
+    <style>
+        html{
+            zoom:0.75;
+        }
+        @page {
+            margin: 0
+        }
+
+        body {
+            margin: 0
+        }
+
+        .sheet {
+            margin: 0;
+            overflow: hidden;
+            position: relative;
+            box-sizing: border-box;
+            page-break-after: always;
+        }
+        /** Paper sizes **/
+
+        body.A4 .sheet {
+            width: 210mm;
+            min-height: 296mm;
+            height: auto
+        }
+
+        body.A4.landscape .sheet {
+            width: 297mm;
+            height: 209mm
+        }
+        /** Padding area **/
+
+        .sheet.padding-10mm {
+            padding: 10mm
+        }
+
+        .sheet.padding-15mm {
+            padding: 15mm
+        }
+
+        .sheet.padding-20mm {
+            padding: 20mm
+        }
+
+        .sheet.padding-25mm {
+            padding: 25mm
+        }
+        /** For screen preview **/
+
+        @media screen {
+            body {
+                background: #e0e0e0
+            }
+            .sheet {
+                background: white;
+                box-shadow: 0 .5mm 2mm rgba(0, 0, 0, .3);
+                margin: 5mm auto;
+            }
+        }
+        /** Fix for Chrome issue #273306 **/
+
+        @media print {
+            body.A4.landscape {
+                width: 297mm
+            }
+            body.A4,
+            body.A5.landscape {
+                width: 210mm
+            }
+        }
+    </style>
+    <style>
+        @page {
+            size: A4
+        }
+    </style>
+
+    <style>
+        .container {
+            width: 420px;
+            height: 680px;
+            background: #FBF7F4;
+            margin: auto;
+        }
+
+        .header {
+            width: 100%;
+            height: 50px;
+            border-bottom: 1px solid #B99E8F;
+        }
+
+        .header .mygov-logo {
+            width: 80px;
+            height: 22px;
+            margin-top: 13px;
+            margin-left: 21px;
+        }
+
+        .header span {
+            float: right;
+            margin-top: 16px;
+            margin-right: 21px;
+            font-family: DejaVu Sans;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 9px;
+            line-height: 11px;
+            color: #000000;
+        }
+
+        .doc-info {
+            width: 100%;
+            height: 41px;
+        }
+
+        .doc-labels {
+            float: left;
+            margin-top: 7px;
+            margin-left: 21px;
+            width: 348px;
+        }
+
+        .doc-labels p {
+            margin-top: 0;
+            margin-bottom: 0;
+            line-height: 16px;
+        }
+
+        .doc-labels b {
+            font-family: DejaVu Sans;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 10px;
+            color: #000000;
+
+        }
+
+        .doc-labels span {
+            font-family: DejaVu Sans;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 10px;
+            color: #000000;
+        }
+
+        .doc-info .call-center-logo {
+            width: 30px;
+            height: 30px;
+            float: right;
+            margin-top: 11px;
+            margin-right: 21px;
+        }
+
+        .doc-info .call-center-logo img {
+            width: 100%;
+        }
+
+        .cert-title-section {
+            height: 65px;
+            width: 100%;
+            margin-top: 27px;
+        }
+
+        .cert-title {
+            width: 290px;
+            float: left;
+            border: 1px solid #926953;
+            height: 65px;
+            border-left: none;
+        }
+
+        .cert-title h1 {
+            font-family: DejaVu Sans;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 18px;
+            color: #926953;
+            margin-left: 17px;
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+
+        .cert-title-section .cert-valid-icon{
+            height: 65px;
+            float: right;
+            margin-right: 21px;
+        }
+
+        .cert-title-section .cert-valid-icon img{
+            height: 100%;
+        }
+
+        .person-info-section{
+            margin-top: 27px;
+            padding: 0 20px;
+        }
+
+        .person-info-section p{
+            font-family: DejaVu Sans;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 9px;
+            line-height: 9px;
+            height: 11px;
+            color: #000000;
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+
+        .pull-left{
+            float: left;
+        }
+
+        .pull-right{
+            float: right;
+        }
+
+        .mt-12{
+            margin-top: 12px !important;
+        }
+
+        .top-position{
+            top: 6px!important;
+            position: relative;
+        }
+
+        .person-info-section .info-text{
+            font-size: 12px!important;
+            position: relative;
+            top: 2px;
+        }
+
+        .vaccine-info-section{
+            margin-top: 18px;
+        }
+
+        .vaccine-info-section .vaccine-data-title{
+            width: 100%;
+            height: 29px;
+            background: #EBEEE6;
+            display: flex;
+            justify-content: center;
+        }
+
+        .vaccine-info-section .vaccine-data-title p{
+            font-family: DejaVu Sans;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 10px;
+            line-height: 10px;
+            color: #000000;
+            text-align: center;
+        }
+
+        .vaccine-info-section table{
+            width: 100%;
+        }
+
+        .vaccine-info-section table td{
+            font-family: DejaVu Sans;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 10px;
+            line-height: 10px;
+            color: #926953;
+            text-align: center;
+            padding: 11px 1px;
+        }
+
+        .footer{
+            background: #EBEEE6;
+            padding: 20px;
+            height: 100px;
+        }
+
+        .footer .qr-code{
+            width: 100px;
+            height: 100px;
+            float: left;
+        }
+
+        .footer img{
+            width: 100%;
+        }
+
+        .footer .sn-logo{
+            margin-top: 21px;
+            margin-left: 15px;
+            width: 71px;
+            float: left;
+        }
+
+        .footer .its-logo{
+            margin-top: 22px;
+            margin-left: 14px;
+            width: 83px;
+            float: left;
+        }
+
+
+        .footer .tabib-logo{
+            margin-top: 31px;
+            margin-left: 9px;
+            width: 88px;
+            float: left;
+        }
+
+    </style>
+</head>
+<body class="A4">
+    <section class="sheet padding-10mm">
+        <div class="container">
+            <div class="header">
+                <img class="mygov-logo" src="{{{myGovLogoCovCert}}}" alt="">
+                <span>my.gov.az</span>
+            </div>
+            <div class="doc-info">
+                <div class="doc-labels">
+                    <p><b>Sənədin Nömrəsi: </b><span>{{{documentNumber}}}</span></p>
+                    <p><b>Verilmə tarixi: </b><span>{{{docGivenDate}}}</span></p>
+                </div>
+                <div class="call-center-logo">
+                    <img src="{{{callCenter1542}}}" alt="">
+                </div>
+            </div>
+            <div class="cert-title-section">
+                <div class="cert-title">
+                    <h1>PEYVƏND SERTİFİKATI</h1>
+                    <h1>VACCINATION CARD</h1>
+                </div>
+                <div class="cert-valid-icon">
+                    <img src="{{{validLogoCovCert}}}" alt="">
+                </div>
+            </div>
+            <div class="person-info-section">
+                <p>
+                    <span class="pull-left">SOYADI</span>
+                    <span class="pull-right info-text">{{{surname}}}</span>
+                </p>
+                <p>
+                    <span class="pull-left">SURNAME</span>
+                    <span class="pull-right info-text">{{{surname}}}</span>
+                </p>
+
+                <p class="mt-12">
+                    <span class="pull-left">ADI</span>
+                    <span class="pull-right info-text">{{{name}}}</span>
+                </p>
+                <p>
+                    <span class="pull-left">GIVEN NAME</span>
+                    <span class="pull-right info-text">{{{name}}}</span>
+                </p>
+
+                <p class="mt-12">
+                    <span class="pull-left">DOĞULDUĞU TARİX</span>
+                    <span class="pull-right top-position info-text">{{{birthdate}}}</span>
+                </p>
+                <p>
+                    <span class="pull-left">DATE OF BIRTH</span>
+                    <span class="pull-right"></span>
+                </p>
+
+                <p class="mt-12">
+                    <span class="pull-left">PASPORT NÖMRƏSİ</span>
+                    <span class="pull-right top-position info-text">{{{passportNumber}}}</span>
+                </p>
+                <p>
+                    <span class="pull-left">PASSPORT NUMBER</span>
+                    <span class="pull-right"></span>
+                </p>
+
+                <p class="mt-12">
+                    <span class="pull-left">FƏRDİ İDENTİFİKASİYA NÖMRƏSİ</span>
+                    <span class="pull-right top-position info-text">{{{pin}}}</span>
+                </p>
+                <p>
+                    <span class="pull-left">PERSONAL ID</span>
+                    <span class="pull-right"></span>
+                </p>
+            </div>
+            <div class="vaccine-info-section">
+                <div list="vaccinePassportList" class="vaccine-data">
+                    <div class="vaccine-data-title">
+                        <p>{{{doseLabel}}}</p>
+                    </div>
+                    <table>
+                        <tr>
+                            <td>{{{vaccineName}}}</td>
+                            <td>S/N - {{{vaccineSerialNumber}}}</td>
+                            <td>Tarix/Date - {{{vaccineDate}}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="qr-code">
+                    <img src="data:image/png;base64,{{{qrCovid}}}" alt="">
+                </div>
+                <div class="sn-logo">
+                    <img src="{{{snLogo}}}" alt="">
+                </div>
+                <div class="its-logo">
+                    <img src="{{{itsLogo}}}" alt="">
+                </div>
+                <div class="tabib-logo">
+                    <img src="{{{tabibLogo}}}" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+{
+  "data": {
+    "name": "CAVİD",
+    "surname": "KƏRİMBƏYLİ",
+    "birthdate": "14.02.1993",
+    "passportNumber": "C02713255",
+    "pin": "5HYQ5C9",
+    "patronymic": "NİZAMİ OĞLU",
+    "vaccinePassportList": [
+      {
+        "doseLabel": "Birinci doza - First dose",
+        "vaccineType": "1",
+        "vaccineName": "Sinovac",
+        "vaccineDate": "31.03.2021",
+        "vaccineSerialNumber": "B04160006A"
+      },
+      {
+        "doseLabel": "İkinci doza - Second dose",
+        "vaccineType": "2",
+        "vaccineName": "Sinovac",
+        "vaccineDate": "29.04.2021",
+        "vaccineSerialNumber": "J202103007"
+      }
+    ],
+    "url": null,
+    "name_en": "JAVID",
+    "surname_en": "KARIMBAYLI"
+  }
+}

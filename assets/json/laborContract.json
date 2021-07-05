@@ -1,0 +1,31 @@
+{
+  "data": {
+    "contracts": [
+      {
+        "employee": {
+          "surname": "SƏMƏDOV",
+          "name": "FƏRİD",
+          "patronymic": "SÜLEYMAN OĞLU",
+          "givenDate": "12.07.2018",
+          "seria": "AZE 18377455",
+          "pin": "5J9M39C",
+          "birthDate": "17.04.1993",
+          "registrationAddress": "BAKI şəh., NƏRİMANOV ray., C.HACIBƏYLİ KÜÇ., ev.28B, m.17"
+        },
+        "employer": {
+          "name": "\"ELEKTRON HÖKUMƏTİN İNKİŞAFI MƏRKƏZİ\" PUBLİK HÜQUQİ ŞƏXSİ",
+          "phones": "0505019479"
+        },
+        "workPlace": {
+          "workPlace": "Rəhbərlik",
+          "position": "Müşavir, hökumət"
+        },
+        "other": {
+          "contractBeginDate": "03.07.2018",
+          "contractEndDate": "04.08.2021",
+          "monthlySalary": "4313.73"
+        }
+      }
+    ]
+  }
+}
