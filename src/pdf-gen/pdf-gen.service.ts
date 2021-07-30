@@ -1,11 +1,9 @@
 import { HttpException } from '@nestjs/common';
 import { HttpStatus } from '@nestjs/common';
 import { Injectable } from '@nestjs/common';
-import { exception } from 'console';
 import { PdfResponse } from './interfaces/pdf.interface';
 import { CreatePdfDto } from './pdf-dto/create-pdf.dto';
-import { uuid } from 'uuidv4';
-import { truncate } from 'fs';
+// import { uuid } from 'uuidv4';
 const hbs = require('hbs');
 const html2pdf = require('html-pdf');
 const QRCode = require('qrcode');
@@ -17,8 +15,8 @@ export class PdfGenService {
   dataResponse: PdfResponse = {
     appName: '',
     data: {
-      content: '',
-      documentId: '',
+      content:'',
+      documentid:'',
     },
     description: '',
     exception: null,
@@ -36,9 +34,15 @@ export class PdfGenService {
     var source = CreatePdfDto;
     // hbs string data
     var template = hbs.compile(source.htmlString);
-    var qrstring = source.docId;
+    var qrstring;
+    if (source.data.qrCovid){
+      qrstring = source.data.qrCovid;
+    } else{
+      qrstring = source.docId      
+    }
     var data = source.data;
-
+    console.log(qrstring);
+    
     if (qrstring.length === 0) {
       throw new HttpException(
         {
@@ -52,7 +56,9 @@ export class PdfGenService {
     // QR generator
     await new Promise((res, rej) => {
       QRCode.toDataURL(qrstring, (err, url) => {
-        this.dataResponse.data.documentId = qrstring;
+      
+          this.dataResponse.data.documentId = qrstring;
+
         if (err) {
           rej(err);
           console.log('error occured', err);
@@ -81,11 +87,21 @@ export class PdfGenService {
     // data for map in hbs
     await new Promise((res, rej) => {
       const pdfToBase64 = () => {
-        var modifedHtmlString = template({
-          ...data,
-          qr: this.qr,
-          barcode: this.barCode,
-        });
+        let dataS;
+        if (source.data.qrCovid){
+          dataS = {
+            ...data,
+            qrCovid: this.qr,
+            barcode: this.barCode,
+          };
+        }else{
+          dataS = {
+            ...data,
+            qr: this.qr,
+            barcode: this.barCode,
+          };
+        }
+          var modifedHtmlString = template(dataS);
 
         html2pdf.create(modifedHtmlString, option).toStream((err, stream) => {
           if (err) {
@@ -98,7 +114,7 @@ export class PdfGenService {
               this.dataResponse.status = 200;
               this.dataResponse.timestamp = new Date().toLocaleDateString(
                 'az-AZ',
-                {  
+                {
                   year: 'numeric',
                   month: 'numeric',
                   day: 'numeric',

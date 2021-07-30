@@ -1,0 +1,52 @@
+{
+  "certificates": [
+    {
+      "passportNumber": 7190424,
+      "daxilIL": 2014,
+      "lastName": "SƏMƏDOV",
+      "passportSerial": "AZE",
+      "dNovu": "Fərqlənmə",
+      "dSeriya": "",
+      "fakulte": "Avtomatika və kompüter texnikası",
+      "sex": "K",
+      "tdili": "Azərbaycan",
+      "tForma": "Əyani",
+      "serencamNom": "11/Q 2014-09-11",
+      "bitiribAli": "Azərbaycan Texniki Universiteti",
+      "bitirib": 2016,
+      "birthDate": "17.04.1993",
+      "emrK": " ",
+      "patronymic": "SÜLEYMAN OĞLU",
+      "tPille": "Magistratura",
+      "qebulIxtisas": "İnformasiya texnologiyaları və sistemləri mühəndisliyi",
+      "name": "FƏRİD",
+      "dNomre": "",
+      "qebulMuessise": "Azərbaycan Texniki Universiteti",
+      "bitirdiyiIxtisas": null
+    },
+    {
+      "passportNumber": 7190424,
+      "daxilIL": 2010,
+      "lastName": "SƏMƏDOV",
+      "passportSerial": "AZE",
+      "dNovu": "Fərqlənmə",
+      "dSeriya": "A",
+      "fakulte": "",
+      "sex": "K",
+      "tdili": "Azərbaycan",
+      "tForma": "Əyani",
+      "serencamNom": "",
+      "bitiribAli": "Azərbaycan Memarlıq və İnşaat Universiteti",
+      "bitirib": 2014,
+      "birthDate": "17.04.1993",
+      "emrK": " ",
+      "patronymic": "SÜLEYMAN OĞLU",
+      "tPille": "Bakalavriat",
+      "qebulIxtisas": "",
+      "name": "FƏRİD",
+      "dNomre": "026458",
+      "qebulMuessise": "Azərbaycan Memarlıq və İnşaat Universiteti",
+      "bitirdiyiIxtisas": null
+    }
+  ]
+}

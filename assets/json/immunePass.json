@@ -1,0 +1,32 @@
+{
+  "timestamp": "2021-07-30 12:23:46",
+  "status": 200,
+  "description": "OK",
+  "transaction": "5ef1443a-bee3-43df-bc7b-64ddfbccb531",
+  "appName": "mygov_reference",
+  "exception": null,
+  "data": {
+    "name": "MƏMMƏDCAMAL",
+    "surname": "İSMAYILZADƏ",
+    "birthdate": "18.08.1994",
+    "passportNumber": "C01462671",
+    "pin": "5WM4U7W",
+    "patronymic": "NƏBİ OĞLU",
+    "immunePassport": {
+      "testResultDate": "30.11.2020",
+      "validityDate": "12.06.2021",
+      "valid": false,
+      "testName": "COVID-19-RT-PCR",
+      "hasBooster": true,
+      "boosterVaccine": {
+        "vaccineType": "1",
+        "vaccineName": "Sinovac",
+        "vaccineDate": "12.07.2021",
+        "vaccineSerialNumber": "202106083K"
+      }
+    },
+    "url": null,
+    "name_en": "MAMMADJAMAL",
+    "surname_en": "ISMAYILZADA"
+  }
+}

@@ -1,9 +1,6 @@
 export interface PdfResponse {
   appName: '';
-  data: {
-    content: '';
-    documentId:any;
-  };
+  data:any;
   description:any;
   exception: any;
   status: any;

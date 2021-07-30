@@ -5,7 +5,6 @@
     <title></title>
     <!-- css for printing -->
     <style>
-      /* * {        margin: 0;        padding: 0;      } */
       html {
         line-height: 1.15;
         -ms-text-size-adjust: 100%;
@@ -24,16 +23,20 @@
         position: relative;
         box-sizing: border-box;
         page-break-after: always;
-      } /** Paper sizes **/
+      }
+
+      /* Paper sizes*/
       body.A4 .sheet {
         width: 209mm;
         min-height: 296mm;
         height: auto;
+        position: relative;
       }
       body.A4.landscape .sheet {
-        width: 297mm;
+        width: 296mm;
         height: 209mm;
-      } /** Padding area **/
+      }
+      /* Padding area */
       .sheet.padding-10mm {
         padding: 10mm;
       }
@@ -45,7 +48,8 @@
       }
       .sheet.padding-25mm {
         padding: 25mm;
-      } /** For screen preview **/
+      }
+      /*For screen preview */
       @media screen {
         body {
           background: #e0e0e0;
@@ -55,7 +59,8 @@
           box-shadow: 0 0.5mm 2mm rgba(0, 0, 0, 0.3);
           margin: 5mm auto;
         }
-      } /** Fix for Chrome issue #273306 **/
+      }
+      /* Fix for Chrome issue #273306 */
       @media print {
         body.A4.landscape {
           width: 297mm;
@@ -76,7 +81,11 @@
         width: 420px;
         height: 680px;
         background: #fbf7f4;
-        margin: auto;
+        /* margin: auto; */
+        position: absolute;
+        top: 12%;
+        left: 25%;
+
       }
       .header {
         width: 100%;
@@ -342,7 +351,7 @@
             <table class="vaccine-data-title">
               <tbody style="width: 100%">
                 <tr style="vertical-align: middle; width: 100%">
-                  <td>{{{this.doseLabel}}}</td>
+                  <td style="color: black">{{{this.doseLabel}}}</td>
                 </tr>
               </tbody>
             </table>
@@ -370,4 +379,3 @@
     </section>
   </body>
 </html>
-"

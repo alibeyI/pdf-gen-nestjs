@@ -2,15 +2,21 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+
     <title>A4</title>
-    <link rel="stylesheet" href="vispy/vispy.css" />
+
+    <link rel="stylesheet" type="text/css" href="{{{fontVisby}}}" />
+
     <style>
       /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
       html {
         line-height: 1.15;
         -ms-text-size-adjust: 100%;
         -webkit-text-size-adjust: 100%;
-        zoom:0.75;
+        zoom: 0.75;
+      }
+      html {
+        zoom: 0.75;
       }
       body {
         margin: 0;
@@ -197,7 +203,7 @@
         display: none;
       } /*# sourceMappingURL=normalize.min.css.map */
     </style>
-    <!-- css for printing -->
+
     <style>
       @page {
         margin: 0;
@@ -213,7 +219,7 @@
         page-break-after: always;
       } /** Paper sizes **/
       body.A4 .sheet {
-        width: 260mm;
+        width: 210mm;
         min-height: 296mm;
         height: auto;
       }
@@ -253,11 +259,13 @@
         }
       }
     </style>
+
     <style>
       @page {
         size: A4;
       }
     </style>
+
     <style>
       * {
         font-size: 14px;
@@ -351,17 +359,16 @@
       .common-table {
         width: 100%;
         text-align: left;
-        border-collapse: collapse;
       }
       .common-table td {
         padding: 5px;
-        border-bottom: 1px solid #d5dfe9;
       }
       .common-table tbody tr:first-child {
         background: #d5dfe9;
         margin-bottom: 20px;
       }
       .common-table:last-child {
+        /*border-bottom: 1px solid #cac5c5;*/
         padding-bottom: 11px;
       }
       .user-table {
@@ -390,21 +397,22 @@
         padding: 0 3px 3px 0;
         margin-left: 7px;
         margin-bottom: 10px;
-        font-size: 16px;
-        margin: 0;
       }
       .common-table tr td:nth-child(2) {
-        width: 60%;
+        width: 40%;
       }
       .user-table tr td:nth-child(2) {
-        width: 60%;
+        width: 40%;
       }
-      .content .table-container:last-child {
-        border-bottom: 1px solid #cac5c5;
+      .common-table tr td:nth-child(2) {
+        width: 75%;
+      }
+      .common-table td {
+        padding: 5px;
+        border-bottom: 1px solid #d5dfe9;
       }
     </style></head
-  >
-  <!-- Set "A5", "A4" or "A3" for class name --><!-- Set also "landscape" if you need -->
+  ><!-- Set "A5", "A4" or "A3" for class name --><!-- Set also "landscape" if you need -->
   <body class="A4">
     <!-- Each sheet element should have the class "sheet" --><!-- "padding-**mm" is optional: you can set 10, 15, 20 or 25 -->
     <section class="sheet padding-10mm">
@@ -413,78 +421,145 @@
           <div class="header-section-one-left-side">
             <img style="width: 125px" src="{{{logo}}}" />
           </div>
-          <div class="header-section-one-middle"><p>my.gov.az</p></div>
+
+          <div class="header-section-one-middle">
+            <p>my.gov.az</p>
+          </div>
+
           <div class="header-section-one-right-side">
             <img style="width: 46px" src="{{{logoCallCenter}}}" />
           </div>
+
           <div class="clear"></div>
         </div>
+
         <div class="clear"></div>
-        <div class="container">
-          <div class="content-header">
-            <p>
-              Sığortaolunanın 01.01.2006-cı ildən ödədiyi məcburi dövlət sosial
-              sığorta haqqı və fərdi şəxsi hesabında toplanan pensiya kapitalı
-              barədə məlumat
+
+        <div class="header-section-two">
+          <div class="header-section-two-left-side">
+            <p class="bold-text">
+              Sənədin nömrəsi:
+              <span style="font-weight: 500">{{{documentNumber}}}</span>
             </p>
           </div>
+
+          <div class="header-section-two-left-side">
+            <p class="bold-text">
+              Verilmə tarixi:
+              <span style="font-weight: 500">{{{docGivenDate}}}</span>
+            </p>
+          </div>
+
+          <div class="clear"></div>
+        </div>
+
+        <div class="clear"></div>
+
+        <div class="container">
+          <!-- <div class="content-header">                <p>Diplom haqqında arayış</p>            </div> -->
           <div class="content">
-            <div class="user-info">
-              <div style="text-align: left; margin-top: 30px">
-                <p class="heading"><span>Şəxsi məlumatlar</span></p>
-              </div>
-              <table class="user-table">
-                <tbody>
-                  <tr>
-                    <td style="font-weight: bold" class="align-left">
-                      Sosial Sığorta Nömrəsi:
-                    </td>
-                    <td class="">{{{ssn}}}</td>
-                  </tr>
-                  <tr>
-                    <td style="font-weight: bold" class="align-left">
-                      Pensiya kapitalın cəmi:
-                    </td>
-                    <td class="">{{{totalCapital}}}</td>
-                  </tr>
-                </tbody>
-              </table>
+            <div style="text-align: left; margin-top: 30px">
+              <p class="heading">
+                <span style="font-size: 16px"
+                  >Şəxsə aid təhsil məlumatları</span
+                >
+              </p>
             </div>
-            <div style="text-align: left; margin-top: 30px" list="@accounts">
-              <p class="heading"><span>Hesablar</span></p>
-            </div>
-            <div class="table-container">
+
+            <div list="certificates" class="table-container">
               <table class="common-table">
                 <tbody>
                   <tr>
                     <td colspan="2" style="font-weight: bold">
-                      <span style="font-weight: bold"></span>İl {{{paidYear}}}
+                      <span style="font-weight: bold"></span>{{{qebulMuessise}}}
                     </td>
                   </tr>
+
                   <tr>
-                    <td style="font-weight: bold">
-                      Ödənilmiş məcburi dövlət sosial sığorta haqqı
-                    </td>
-                    <td>{{{paidAmount}}}</td>
+                    <td style="font-weight: bold">Soyad, ad, ata adı</td>
+
+                    <td class="">{{{lastName}}} {{{name}}} {{{patronymic}}}</td>
                   </tr>
+
                   <tr>
-                    <td style="font-weight: bold">
-                      Fərdi şəxsi hesabın sığorta hissəsində qeydə alınan
-                      pensiya kapitalı
-                    </td>
-                    <td>{{{capital}}}</td>
+                    <td style="font-weight: bold">Qəbul olduğu ixtisas</td>
+
+                    <td>{{{qebulIxtisas}}}</td>
                   </tr>
+
+                  <tr>
+                    <td style="font-weight: bold">Bitirdiyi müəssisə</td>
+
+                    <td>{{{bitiribAli}}}</td>
+                  </tr>
+
+                  <tr>
+                    <td style="font-weight: bold">Bitirdiyi ixtisas</td>
+
+                    <td>{{{bitirdiyiIxtisas}}}</td>
+                  </tr>
+
+                  <tr>
+                    <td style="font-weight: bold">Fakültə</td>
+
+                    <td>{{{fakulte}}}</td>
+                  </tr>
+
+                  <tr>
+                    <td style="font-weight: bold">Təhsil pilləsi</td>
+
+                    <td>{{{tPille}}}</td>
+                  </tr>
+
+                  <tr>
+                    <td style="font-weight: bold">Təhsil forması</td>
+
+                    <td>{{{tForma}}}</td>
+                  </tr>
+
+                  <tr>
+                    <td style="font-weight: bold">Təlim dili</td>
+
+                    <td>{{{tdili}}}</td>
+                  </tr>
+
+                  <tr>
+                    <td style="font-weight: bold">TQDK sərəncam nömrəsi</td>
+
+                    <td>{{{serencamNom}}}</td>
+                  </tr>
+
+                  <tr>
+                    <td style="font-weight: bold">Daxil olduğu il</td>
+
+                    <td>{{{daxilIL}}}</td>
+                  </tr>
+
+                  <tr>
+                    <td style="font-weight: bold">Bitirdiyi il</td>
+
+                    <td>{{{bitirib}}}</td>
+                  </tr>
+
                   <tr>
                     <td style="font-weight: bold">
-                      İndeksləşdirilmiş pensiya kapitalının məbləği
+                      Diplom seriyası və nömrəsi
                     </td>
-                    <td>{{{indexedCapital}}}</td>
+
+                    <td>{{{dSeriya}}} {{{dNomre}}}</td>
+                  </tr>
+
+                  <tr>
+                    <td style="font-weight: bold">Diplomun növü</td>
+
+                    <td>{{{dNovu}}}</td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </div>
         </div>
+
         <div class="footer">
           <div class="barcodes">
             <div class="barcode128">
@@ -494,13 +569,16 @@
               />
               <br />
               <br />
-              <span>{{{serialNumber}}}</span>
+              <span>{{{documentNumber}}}</span>
             </div>
+
             <div class="qrcode">
               <img style="width: 80px" src="data:image/png;base64,{{{qr}}}" />
             </div>
+
             <div class="clear"></div>
           </div>
+
           <div class="info-text">
             <p style="font-size: 14px">
               * Ştrix kodlar arayışın sistem nömrəsini əks etdirir.

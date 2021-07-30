@@ -24,9 +24,11 @@
     "@nestjs/common": "^7.6.15",
     "@nestjs/core": "^7.6.15",
     "@nestjs/platform-express": "^7.6.15",
+    "bwip-js": "^3.0.1",
     "hbs": "^4.1.2",
     "html-pdf": "^3.0.1",
     "pdfkit": "^0.12.1",
+    "qrcode": "^1.4.4",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^6.6.6"

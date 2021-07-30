@@ -6,10 +6,12 @@
     <link rel="stylesheet" type="text/css" href="{{{fontVisby}}}" />
     <style>
       /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
-      html {
+      /* Diplomlar */
+     html {
         line-height: 1.15;
         -ms-text-size-adjust: 100%;
         -webkit-text-size-adjust: 100%;
+        zoom: 0.75;
       }
       body {
         margin: 0;
@@ -124,7 +126,7 @@
       [type='reset'],
       [type='submit'],
       button,
-      html [type='button'] {
+      html [type='button'] { 
         -webkit-appearance: button;
       }
       [type='button']::-moz-focus-inner,
@@ -444,71 +446,73 @@
                 >
               </p>
             </div>
+            {{#each certificates}}
             <div list="certificates" class="table-container">
               <table class="common-table">
                 <tbody>
                   <tr>
                     <td colspan="2" style="font-weight: bold">
-                      <span style="font-weight: bold"></span>{{{qebulMuessise}}}
+                      <span style="font-weight: bold"></span>{{{this.qebulMuessise}}}
                     </td>
                   </tr>
                   <tr>
                     <td style="font-weight: bold">Soyad, ad, ata adı</td>
-                    <td class="">{{{lastName}}} {{{name}}} {{{patronymic}}}</td>
+                    <td class="">{{{this.lastName}}} {{{this.name}}} {{{this.patronymic}}}</td>
                   </tr>
                   <tr>
                     <td style="font-weight: bold">Qəbul olduğu ixtisas</td>
-                    <td>{{{qebulIxtisas}}}</td>
+                    <td>{{{this.qebulIxtisas}}}</td>
                   </tr>
                   <tr>
                     <td style="font-weight: bold">Bitirdiyi müəssisə</td>
-                    <td>{{{bitiribAli}}}</td>
+                    <td>{{{this.bitiribAli}}}</td>
                   </tr>
                   <tr>
                     <td style="font-weight: bold">Bitirdiyi ixtisas</td>
-                    <td>{{{bitirdiyiIxtisas}}}</td>
+                    <td>{{{this.bitirdiyiIxtisas}}}</td>
                   </tr>
                   <tr>
                     <td style="font-weight: bold">Fakültə</td>
-                    <td>{{{fakulte}}}</td>
+                    <td>{{{this.fakulte}}}</td>
                   </tr>
                   <tr>
                     <td style="font-weight: bold">Təhsil pilləsi</td>
-                    <td>{{{tPille}}}</td>
+                    <td>{{{this.tPille}}}</td>
                   </tr>
                   <tr>
                     <td style="font-weight: bold">Təhsil forması</td>
-                    <td>{{{tForma}}}</td>
+                    <td>{{{this.tForma}}}</td>
                   </tr>
                   <tr>
                     <td style="font-weight: bold">Təlim dili</td>
-                    <td>{{{tdili}}}</td>
+                    <td>{{{this.tdili}}}</td>
                   </tr>
                   <tr>
                     <td style="font-weight: bold">TQDK sərəncam nömrəsi</td>
-                    <td>{{{serencamNom}}}</td>
+                    <td>{{{this.serencamNom}}}</td>
                   </tr>
                   <tr>
                     <td style="font-weight: bold">Daxil olduğu il</td>
-                    <td>{{{daxilIL}}}</td>
+                    <td>{{{this.daxilIL}}}</td>
                   </tr>
                   <tr>
                     <td style="font-weight: bold">Bitirdiyi il</td>
-                    <td>{{{bitirib}}}</td>
+                    <td>{{{this.bitirib}}}</td>
                   </tr>
                   <tr>
                     <td style="font-weight: bold">
                       Diplom seriyası və nömrəsi
                     </td>
-                    <td>{{{dSeriya}}} {{{dNomre}}}</td>
+                    <td>{{{this.dSeriya}}} {{{this.dNomre}}}</td>
                   </tr>
                   <tr>
                     <td style="font-weight: bold">Diplomun növü</td>
-                    <td>{{{dNovu}}}</td>
+                    <td>{{{this.dNovu}}}</td>
                   </tr>
                 </tbody>
               </table>
             </div>
+            {{each}}
           </div>
         </div>
         <div class="footer">
