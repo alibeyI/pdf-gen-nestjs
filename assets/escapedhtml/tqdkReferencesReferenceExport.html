@@ -528,13 +528,14 @@
           </div>
           <div list="references">
             <!--Iterable content there are two parameter-->
+            {{#each references}}
             <div style="text-align:left;margin-top:15px;">
               <p class="heading">
               <table>
                 <tbody>
                   <td style="border-bottom:1pxsolid#000;font-size:16px"><span class="bold-text">Soyad, ad, ata
                       adı:</span></td>
-                  <td style="border-bottom:1pxsolid#000;font-size:16px">{{{fullname}}}</td>
+                  <td style="border-bottom:1pxsolid#000;font-size:16px">{{{this.fullname}}}</td>
                 </tbody>
               </table>
               </p>

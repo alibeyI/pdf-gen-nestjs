@@ -9,7 +9,7 @@ import { EEXIST } from 'constants';
 export class PdfGenController {
   constructor(private service: PdfGenService) {}
   @Post()
-  async createPdf(@Body() createPdfDto: CreatePdfDto, @Res() response): Promise<PdfResponse> {
+ async  createPdf(@Body() createPdfDto: CreatePdfDto, @Res() response): Promise<PdfResponse> {
     try{
       const data = await this.service.create(createPdfDto);
       return response.send(data);

@@ -41,7 +41,7 @@ export class PdfGenService {
       qrstring = source.docId      
     }
     var data = source.data;
-    console.log(qrstring);
+    // console.log(qrstring);
     
     if (qrstring.length === 0) {
       throw new HttpException(
@@ -54,10 +54,12 @@ export class PdfGenService {
     }
 
     // QR generator
-    await new Promise((res, rej) => {
+  await   new Promise((res, rej) => {
       QRCode.toDataURL(qrstring, (err, url) => {
       
           this.dataResponse.data.documentId = qrstring;
+          console.log('QR');
+          
 
         if (err) {
           rej(err);
@@ -69,7 +71,7 @@ export class PdfGenService {
       });
     });
     // Barcode generator
-    await new Promise((res, rej) => {
+  await   new Promise((res, rej) => {
       bwipjs.toBuffer(
         { bcid: 'code128', text: qrstring, includetext: false },
         (err, png) => {
@@ -77,6 +79,8 @@ export class PdfGenService {
             rej(err);
             console.log(err);
           } else {
+          console.log('BAR');
+
             this.barCode = png.toString('base64');
             res(true);
           }
@@ -85,8 +89,10 @@ export class PdfGenService {
     });
 
     // data for map in hbs
-    await new Promise((res, rej) => {
+  await   new Promise((res, rej) => {
       const pdfToBase64 = () => {
+          console.log('data');
+
         let dataS;
         if (source.data.qrCovid){
           dataS = {
@@ -108,7 +114,11 @@ export class PdfGenService {
             rej(err);
             console.log('error occured', err);
           } else {
+            console.log('topdf');
+            
             stream.on('data', (data) => {
+              console.log('topdf2');
+              
               this.dataResponse.data.content = data.toString('base64');
               this.dataResponse.description = 'OK';
               this.dataResponse.status = 200;
@@ -124,6 +134,8 @@ export class PdfGenService {
                 },
               );
               res(true);
+            console.log('topdf3');
+
             });
           }
         });
